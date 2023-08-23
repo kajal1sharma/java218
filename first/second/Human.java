@@ -15,6 +15,9 @@ package first.second;
         this.b=b;
     }
 
+    protected void getInfo(){
+        System.out.println("this is the get info function of human");
+    }
     public int getA() {
         return a;
     }
