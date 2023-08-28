@@ -6,23 +6,51 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ArrayList;
 
 public class FileIO2 {
     //persisent storage => files 
 
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException,Exception{
        
 
 
-        FileReader fr = new FileReader("Record.txt");
+        URI uri = new URI("file:///C:/Users/ashis/Desktop/java218/abc.txt");
+        File f= new File(uri);
+        if(f.exists()){
+            System.out.println(true);
+        }
+        // 
+        
+        // FileReader fr1 = new FileReader("Record.txt");
+        // FileReader fr2 = new FileReader("abc.txt");
+
 
         //-1 => end of the file 
-        int ch = fr.read();
-        while(ch!=-1){
-            System.out.print((char)ch);
-            ch= fr.read();
-        }
-        fr.close();
+        // int ch = fr1.read();
+        // char ch1[]= new char[100];
+        // char ch2[] = new char[100];
+        // fr1.read(ch1);
+        // fr2.read(ch2);
+
+        // String str1 = new String(ch1);
+        // String str2 = new String(ch2);
+        // String strans[]= str1.split(" ");
+        // String strans2[]= str2.split(" ");
+
+
+        // System.out.println(str1);
+        // System.out.println(str2);
+
+       
+
+       // fr1.close();
+        //fr2.close();
+        // while(ch!=-1){
+        //     System.out.print((char)ch);
+        //     ch= fr.read();
+        // }
+        // fr1.close();
 
         // FileDescriptor fd = null;  
         // // byte[] b = { 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 };  
