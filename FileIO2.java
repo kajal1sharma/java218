@@ -1,4 +1,8 @@
 import java.io.File;
+import java.io.FileDescriptor;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
@@ -7,21 +11,74 @@ public class FileIO2 {
     //persisent storage => files 
 
     public static void main(String[] args) throws IOException{
+       
 
 
-        FileWriter fw = new FileWriter("abc.txt");
-        fw.write(48);
-        fw.write(49);
-        fw.write(97);
-        fw.write(98);
+        FileReader fr = new FileReader("Record.txt");
 
-        fw.write("tree");
-        char ch[]={'a','b','c','d','e','f','g','h','i','j'};
-        fw.write(ch, 2, 4);
+        //-1 => end of the file 
+        int ch = fr.read();
+        while(ch!=-1){
+            System.out.print((char)ch);
+            ch= fr.read();
+        }
+        fr.close();
+
+        // FileDescriptor fd = null;  
+        // // byte[] b = { 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58 };  
+        // try  {  
+        //     FileOutputStream fos = new FileOutputStream("Record.txt");  
+             
+        //     fd = fos.getFD();
+        //     FileWriter fw = new FileWriter(fd);  
+        //     fw.write("this is core java class");  
+        //     fw.flush();//flush actually writes everything into the file  
+        //     //fd.sync();// confirms data to be written to the disk  
+        //     fw.close();
+        //     int value = 0;  
+            // for every available bytes  
+            // while ((value = fis.read()) != -1) {  
+            //     char c = (char) value;// converts bytes to char  
+            //     System.out.print(c);  
+            // }  
+            // System.out.println("\nSync() successfully executed!!");  
+        // } catch (Exception e) {  
+        //     e.printStackTrace();  
+        // }  
+
+
+        // FileDescriptor fd= null;
+
+        // FileOutputStream f = new FileOutputStream("abc.txt");
+        // fd= f.getFD();
+
+        // FileReader fw = new FileReader(fd);
+        // int ch= fw.read();
+        // System.out.println(ch);
+        
+        // fw.close();
+
+        // FileWriter fw2 = new FileWriter(null, null)
+
+        // FileWriter fw  = new FileWriter("");
+
+        //FileWriter fw = new FileWriter("abc.txt", true);
+
+        // FileWriter fw = new FileWriter("abc.txt");
+
+        // fw.write(48);
+        // fw.write(49);
+        // fw.write(97);
+        // fw.write(98);
+
+        // fw.write("tree");
+        // char ch[]={'a','b','c','d','e','f','g','h','i','j'};
+        // fw.write(ch, 2, 4);
     
 
-        //moving characters one by one
-        fw.close();
+        // //moving characters one by one
+        // fw.close();
+        
 
        // File f = new File("test.py");
         
