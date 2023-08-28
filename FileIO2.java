@@ -6,17 +6,31 @@ import java.net.URI;
 public class FileIO2 {
     //persisent storage => files 
 
-    public static void main(String[] args) throws IOException,Exception{
+    public static void main(String[] args) throws IOException{
 
 
-        File f = new File("test.py");
+        FileWriter fw = new FileWriter("abc.txt");
+        fw.write(48);
+        fw.write(49);
+        fw.write(97);
+        fw.write(98);
+
+        fw.write("tree");
+        char ch[]={'a','b','c','d','e','f','g','h','i','j'};
+        fw.write(ch, 2, 4);
+    
+
+        //moving characters one by one
+        fw.close();
+
+       // File f = new File("test.py");
         
        // FileWriter fw = new FileWriter(f);
-        FileWriter fw2 =new FileWriter(f, true);
-        fw2= new FileWriter("");
-        fw2.write("hello this a python file");
+        // FileWriter fw2 =new FileWriter(f, true);
+        // //fw2= new FileWriter("");
+        // fw2.write("hello this a python file");
 
-        fw2.close();
+        // fw2.close();
 
         // File f= new File("C:/Users/ashis/Desktop/java218");
         // String arr[]=f.list();
