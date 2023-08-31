@@ -17,11 +17,12 @@ public class FileIO2 {
 
         URI uri = new URI("file:///C:/Users/ashis/Desktop/java218/abc.txt");
         File f= new File(uri);
+        f.length();
         if(f.exists()){
             System.out.println(true);
         }
         // 
-        
+
         // FileReader fr1 = new FileReader("Record.txt");
         // FileReader fr2 = new FileReader("abc.txt");
 
