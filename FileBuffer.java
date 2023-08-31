@@ -12,7 +12,7 @@ public class FileBuffer {
 //USER WILL GIVE INPUT THROUGH CONSOLE FOR MULTIPLE LINES YOU HAVE TO WRITE IT INTO THE FILE
         Scanner sc= new Scanner(System.in);
         FileWriter f= new FileWriter("abc.txt",true);
-        BufferedWriter bw = new BufferedWriter(f,100000);
+        BufferedWriter bw = new BufferedWriter(f,100);
         
         int ch=1;
         while(true){
