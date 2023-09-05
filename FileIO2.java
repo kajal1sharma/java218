@@ -12,7 +12,6 @@ public class FileIO2 {
     //persisent storage => files 
 
     public static void main(String[] args) throws IOException,Exception{
-       
 
 
         URI uri = new URI("file:///C:/Users/ashis/Desktop/java218/abc.txt");
