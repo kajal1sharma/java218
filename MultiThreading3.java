@@ -24,6 +24,7 @@ class Stack{
         }
     }
 
+
     int pop() throws Exception{
         if(top==-1){
             System.out.println("Stack Underflow");
@@ -34,6 +35,9 @@ class Stack{
             top=top-1;
             return ele;
         }
+    }
+    int getSize(){
+        return arr.length;
     }
 }
 
@@ -46,11 +50,29 @@ public class MultiThreading3  extends Thread{
     public void run(){
         String name= Thread.currentThread().getName();
         if(name=="push thread"){
+            for(int i=0;i<100;i++){
 
+                try {
+                    st.push(i);
+                    System.out.println(Thread.currentThread().getName()+" "+st.top);
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
         }
         else if(name=="pop thread"){
+            for(int i=0;i<100;i++){
 
-        }
+                            try {
+                                int data =st.pop();
+                                System.out.println(Thread.currentThread().getName()+" "+st.top);
+                            } catch (Exception e) {
+                                // TODO Auto-generated catch block
+                                e.printStackTrace();
+                            }
+                        }
+                    }
     }
     public static void main(String[] args) {
         Stack st = new Stack(5);
